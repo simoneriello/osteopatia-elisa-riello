@@ -20,7 +20,7 @@
 :root{
   --bg:#F7F4EE; --surface:#FFFFFF; --sage:#EAF0EC; --sage-2:#DCE6DF; --line:#C9D8CF;
   --fg:#1E2A2A; --muted:#475653; --accent:#1F5F66; --accent-ink:#FFFFFF; --accent-soft:#E3EEEC;
-  --shadow:0 12px 32px rgba(30,42,42,.10);
+  --shadow:0 12px 32px rgba(30,42,42,.10); --svc-teal:#46655F; --svc-light:#F0EEE8; --bronze:#C29A82;
   --display:"Nunito", "Avenir Next", "Segoe UI", system-ui, sans-serif;
   --body:"Nunito Sans", "Avenir Next", "Segoe UI", system-ui, sans-serif;
   --r-lg:40px; --r-md:28px; --r-sm:18px;
@@ -28,11 +28,11 @@
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#141B1A; --surface:#1C2524; --sage:#1F2B29; --sage-2:#283734; --line:#35463F;
   --fg:#EDF2EF; --muted:#A9B8B3; --accent:#7CC2C2; --accent-ink:#0F2426; --accent-soft:#2A3F3E;
-  --shadow:0 12px 32px rgba(0,0,0,.35); color-scheme:dark;}}
+  --shadow:0 12px 32px rgba(0,0,0,.35); --svc-teal:#2F4A46; --svc-light:#1F2927; --bronze:#C9A48D; color-scheme:dark;}}
 :root[data-theme="dark"]{
   --bg:#141B1A; --surface:#1C2524; --sage:#1F2B29; --sage-2:#283734; --line:#35463F;
   --fg:#EDF2EF; --muted:#A9B8B3; --accent:#7CC2C2; --accent-ink:#0F2426; --accent-soft:#2A3F3E;
-  --shadow:0 12px 32px rgba(0,0,0,.35); color-scheme:dark;}
+  --shadow:0 12px 32px rgba(0,0,0,.35); --svc-teal:#2F4A46; --svc-light:#1F2927; --bronze:#C9A48D; color-scheme:dark;}
 
 *{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -109,13 +109,24 @@ nav.main a.lnk:hover{color:var(--accent)}
 @media (max-width:760px){.zone-panel{grid-template-columns:1fr;padding:24px}.zone-panel img{order:-1}}
 
 /* per chi */
-.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px}
-.svc{background:var(--surface);border-radius:var(--r-md);padding:30px;display:flex;flex-direction:column;gap:12px}
-.svc h3{font-size:22px}
-.svc p{color:var(--muted);font-size:16px}
-.svc.feature{background:var(--accent);color:var(--accent-ink)}
-.svc.feature p{color:var(--accent-ink);opacity:.88}
-.svc.feature .icon-dot{background:color-mix(in srgb,var(--accent-ink) 16%,transparent);color:var(--accent-ink)}
+.svc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.svc{--svc-bg:var(--svc-light);--svc-fg:var(--fg);--svc-muted:var(--muted);position:relative;overflow:hidden;border-radius:var(--r-md);background:var(--svc-bg);color:var(--svc-fg);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);min-height:360px;box-shadow:var(--shadow)}
+.svc.dark{--svc-bg:var(--svc-teal);--svc-fg:#FFFFFF;--svc-muted:rgba(255,255,255,.86)}
+.svc.wide{grid-column:1/-1;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}
+.svc-txt{position:relative;z-index:1;padding:32px 8px 32px 36px;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.svc-ico{width:80px;height:80px;margin-bottom:12px}
+.svc h3{font-size:clamp(22px,2.4vw,28px);color:var(--svc-fg)}
+.svc-rule{display:block;width:44px;height:2px;border-radius:2px;background:var(--bronze)}
+.svc p{color:var(--svc-muted);font-size:16px;max-width:40ch}
+.svc-ph{width:100%;height:0;min-height:100%;object-fit:cover;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 38%);mask-image:linear-gradient(to right,transparent 0,#000 38%)}
+.svc.wide .svc-ph{-webkit-mask-image:radial-gradient(130% 120% at 100% 50%,#000 55%,transparent 72%);mask-image:radial-gradient(130% 120% at 100% 50%,#000 55%,transparent 72%)}
+@media (max-width:900px){
+  .svc-grid{grid-template-columns:1fr}
+  .svc,.svc.wide{grid-template-columns:1fr;min-height:0}
+  .svc-ph,.svc.wide .svc-ph{order:-1;height:220px;min-height:0;-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent 100%);mask-image:linear-gradient(to bottom,#000 55%,transparent 100%)}
+  .svc-txt{padding:0 24px 28px;margin-top:-56px}
+  .svc-ico{width:72px;height:72px}
+}
 .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px}
 .card{background:var(--bg);border-radius:var(--r-md);padding:30px;display:flex;flex-direction:column;gap:12px}
 .card p{color:var(--muted);font-size:16px}
@@ -284,20 +295,32 @@ footer.site a{color:var(--muted)}
     <p class="eyebrow">Prestazioni</p>
     <h2 class="h2" style="margin:8px 0 32px;max-width:640px">Cosa posso fare per te</h2>
     <div class="svc-grid">
-      <article class="svc feature">
-        <span class="icon-dot"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M8 6h8M7 10h10M8 14h8M9 18h6"/></svg></span>
-        <h3>Trattamento osteopatico</h3>
-        <p>Valutazione e trattamento della persona nella sua globalità, con un approccio personalizzato e mirato alle esigenze di ognuno.</p>
+      <article class="svc dark">
+        <div class="svc-txt">
+          <img class="svc-ico" src="img/ico-osteopatia.webp" width="80" height="80" alt="">
+          <h3>Trattamento osteopatico</h3>
+          <span class="svc-rule"></span>
+          <p>Valutazione e trattamento della persona nella sua globalità, con un approccio personalizzato e mirato alle esigenze di ognuno.</p>
+        </div>
+        <img class="svc-ph" src="img/svc-osteopatia.webp" width="314" height="490" alt="Trattamento osteopatico alla schiena" loading="lazy">
       </article>
       <article class="svc">
-        <span class="icon-dot"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9c0-4 3-6 7-6s7 2 7 6c0 3-1 5-3 7l-1 4H9l-1-4c-2-2-3-4-3-7z"/><path d="M9 14c1.5 1 4.5 1 6 0"/></svg></span>
-        <h3>Trattamento specialistico dell'ATM</h3>
-        <p>Approccio specialistico all'articolazione temporo-mandibolare e ai disturbi collegati dell'area mandibolare, cervicale e cranio-facciale.</p>
+        <div class="svc-txt">
+          <img class="svc-ico" src="img/ico-atm.webp" width="80" height="80" alt="">
+          <h3>Trattamento specialistico dell'ATM</h3>
+          <span class="svc-rule"></span>
+          <p>Approccio specialistico all'articolazione temporo-mandibolare e ai disturbi collegati dell'area mandibolare, cervicale e cranio-facciale.</p>
+        </div>
+        <img class="svc-ph" src="img/svc-atm.webp" width="274" height="490" alt="Trattamento della mandibola e del collo" loading="lazy">
       </article>
-      <article class="svc">
-        <span class="icon-dot"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3 4 5 6.5 5 9.5a5 5 0 0 1-10 0C7 9.5 9 7 12 3z"/><path d="M10 13.5a2 2 0 0 0 2 2"/></svg></span>
-        <h3>Linfodrenaggio metodo Renata França</h3>
-        <p>Massaggio linfodrenante con il metodo Renata França, per favorire il drenaggio dei liquidi e la sensazione di leggerezza.</p>
+      <article class="svc wide">
+        <div class="svc-txt">
+          <img class="svc-ico" src="img/ico-linfodrenaggio.webp" width="80" height="80" alt="">
+          <h3>Linfodrenaggio metodo Renata França</h3>
+          <span class="svc-rule"></span>
+          <p>Massaggio linfodrenante con il metodo Renata França, per favorire il drenaggio dei liquidi e la sensazione di leggerezza.</p>
+        </div>
+        <img class="svc-ph" src="img/svc-linfodrenaggio.webp" width="420" height="438" alt="Massaggio linfodrenante alle gambe" loading="lazy">
       </article>
     </div>
   </section>
