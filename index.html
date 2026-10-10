@@ -101,7 +101,8 @@ nav.main a.lnk:hover{color:var(--accent)}
 .zone-panel h3{font-size:28px;margin-bottom:10px}
 .zone-panel p{color:var(--muted);font-size:18px;margin-bottom:14px}
 .zone-panel .who{color:var(--fg);font-weight:600;font-size:16px;margin-bottom:22px}
-.zone-panel img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:28px 28px 100px 28px}
+.zone-panel img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:28px}
+.zone-panel.text-only{grid-template-columns:1fr;max-width:720px;margin-inline:auto}
 @media (max-width:760px){.zone-panel{grid-template-columns:1fr;padding:24px}.zone-panel img{order:-1}}
 
 /* per chi */
@@ -260,33 +261,37 @@ footer.site a{color:var(--muted)}
         <button class="zone-btn" role="tab" id="t-collo" aria-controls="p-collo" aria-selected="false">Collo e cervicale</button>
         <button class="zone-btn" role="tab" id="t-spalla" aria-controls="p-spalla" aria-selected="false">Spalla</button>
         <button class="zone-btn" role="tab" id="t-ginocchio" aria-controls="p-ginocchio" aria-selected="false">Ginocchio</button>
-        <button class="zone-btn" role="tab" id="t-caviglia" aria-controls="p-caviglia" aria-selected="false">Caviglia e piede</button>
+        <button class="zone-btn" role="tab" id="t-caviglia" aria-controls="p-caviglia" aria-selected="false">Caviglia</button>
+        <button class="zone-btn" role="tab" id="t-piede" aria-controls="p-piede" aria-selected="false">Piede</button>
         <button class="zone-btn" role="tab" id="t-altro" aria-controls="p-altro" aria-selected="false">Altro</button>
       </div>
 
       <div class="zone-panel" role="tabpanel" id="p-schiena" aria-labelledby="t-schiena">
         <div><h3>Schiena e zona lombare</h3><p>Lombalgia, sciatalgia, rigidità al risveglio o dopo molte ore seduti.</p><p class="who">Tipico di chi lavora alla scrivania, guida molto o solleva pesi.</p><a class="btn btn-primary" href="#prenota">Prenota per questo disturbo</a></div>
-        <img src="img/zona-schiena.webp" width="800" height="600" alt="" loading="lazy">
+        <img src="img/zona-schiena.webp" width="513" height="342" alt="" loading="lazy">
       </div>
       <div class="zone-panel" role="tabpanel" id="p-collo" aria-labelledby="t-collo" hidden>
         <div><h3>Collo e cervicale</h3><p>Cervicalgia, mal di testa da tensione, spalle contratte da stress e postura.</p><p class="who">Frequente in chi passa la giornata al computer o allo smartphone.</p><a class="btn btn-primary" href="#prenota">Prenota per questo disturbo</a></div>
-        <img src="img/zona-collo.webp" width="800" height="600" alt="" loading="lazy">
+        <img src="img/zona-collo.webp" width="513" height="342" alt="" loading="lazy">
       </div>
       <div class="zone-panel" role="tabpanel" id="p-spalla" aria-labelledby="t-spalla" hidden>
         <div><h3>Spalla</h3><p>Dolore nei movimenti sopra la testa, sovraccarico da sport o da lavoro.</p><p class="who">Comune in pallavolo, nuoto, palestra e lavori manuali.</p><a class="btn btn-primary" href="#prenota">Prenota per questo disturbo</a></div>
-        <img src="img/zona-spalla.webp" width="800" height="600" alt="" loading="lazy">
+        <img src="img/zona-spalla.webp" width="513" height="342" alt="" loading="lazy">
       </div>
       <div class="zone-panel" role="tabpanel" id="p-ginocchio" aria-labelledby="t-ginocchio" hidden>
         <div><h3>Ginocchio</h3><p>Fastidi da corsa, salti e cambi di direzione. Supporto nel recupero dopo un infortunio.</p><p class="who">Runner, calciatori, cestisti e chi riprende a fare sport.</p><a class="btn btn-primary" href="#prenota">Prenota per questo disturbo</a></div>
-        <img src="img/zona-ginocchio.webp" width="800" height="600" alt="" loading="lazy">
+        <img src="img/zona-ginocchio.webp" width="513" height="342" alt="" loading="lazy">
       </div>
       <div class="zone-panel" role="tabpanel" id="p-caviglia" aria-labelledby="t-caviglia" hidden>
-        <div><h3>Caviglia e piede</h3><p>Esiti di distorsione, fastidi alla pianta del piede, appoggio alterato.</p><p class="who">Sportivi e chi sta molte ore in piedi.</p><a class="btn btn-primary" href="#prenota">Prenota per questo disturbo</a></div>
-        <img src="img/zona-caviglia.webp" width="800" height="600" alt="" loading="lazy">
+        <div><h3>Caviglia</h3><p>Esiti di distorsione, rigidità e instabilità dopo un infortunio.</p><p class="who">Frequente in calcio, basket, pallavolo e corsa su sterrato.</p><a class="btn btn-primary" href="#prenota">Prenota per questo disturbo</a></div>
+        <img src="img/zona-caviglia.webp" width="513" height="342" alt="" loading="lazy">
       </div>
-      <div class="zone-panel" role="tabpanel" id="p-altro" aria-labelledby="t-altro" hidden>
+      <div class="zone-panel" role="tabpanel" id="p-piede" aria-labelledby="t-piede" hidden>
+        <div><h3>Piede</h3><p>Fastidi alla pianta del piede, al tallone e appoggio alterato durante la camminata o la corsa.</p><p class="who">Runner e chi sta molte ore in piedi.</p><a class="btn btn-primary" href="#prenota">Prenota per questo disturbo</a></div>
+        <img src="img/zona-piede.webp" width="513" height="342" alt="" loading="lazy">
+      </div>
+      <div class="zone-panel text-only" role="tabpanel" id="p-altro" aria-labelledby="t-altro" hidden>
         <div><h3>Non trovi la tua zona?</h3><p>Scrivimi su WhatsApp e raccontami il problema: ti dico se e come posso aiutarti.</p><p class="who">Rispondo di solito entro la giornata.</p><a class="btn btn-primary" href="https://wa.me/390000000000">Scrivimi su WhatsApp</a></div>
-        <img src="img/zona-altro.webp" width="800" height="600" alt="" loading="lazy">
       </div>
     </div>
 
