@@ -332,17 +332,21 @@ footer.site a{color:var(--muted)}
       <p class="lead">Scegli la zona e scopri come posso aiutarti.</p>
 
       <div class="zones" role="tablist" aria-label="Zone del corpo">
-        <button class="zone-btn" role="tab" id="t-schiena" aria-controls="p-schiena" aria-selected="true">Schiena</button>
+        <button class="zone-btn" role="tab" id="t-atm" aria-controls="p-atm" aria-selected="true">Mandibola e bruxismo</button>
+        <button class="zone-btn" role="tab" id="t-schiena" aria-controls="p-schiena" aria-selected="false">Schiena</button>
         <button class="zone-btn" role="tab" id="t-collo" aria-controls="p-collo" aria-selected="false">Collo e cervicale</button>
         <button class="zone-btn" role="tab" id="t-spalla" aria-controls="p-spalla" aria-selected="false">Spalla</button>
         <button class="zone-btn" role="tab" id="t-ginocchio" aria-controls="p-ginocchio" aria-selected="false">Ginocchio</button>
         <button class="zone-btn" role="tab" id="t-caviglia" aria-controls="p-caviglia" aria-selected="false">Caviglia</button>
         <button class="zone-btn" role="tab" id="t-piede" aria-controls="p-piede" aria-selected="false">Piede</button>
-        <button class="zone-btn" role="tab" id="t-atm" aria-controls="p-atm" aria-selected="false">Mandibola e bruxismo</button>
         <button class="zone-btn" role="tab" id="t-altro" aria-controls="p-altro" aria-selected="false">Altro</button>
       </div>
 
-      <div class="zone-panel" role="tabpanel" id="p-schiena" aria-labelledby="t-schiena">
+      <div class="zone-panel" role="tabpanel" id="p-atm" aria-labelledby="t-atm">
+        <div><h3>Mandibola e bruxismo</h3><p>Denti serrati o digrignati, soprattutto di notte, click o dolore quando apri la bocca, tensioni a mandibola, tempie e collo, spesso legate tra loro.</p><p class="who">È l'ambito su cui ho concentrato la mia formazione: la mia tesi sul bruxismo ha vinto il premio come migliore del TCIO Milano 2026.</p><a class="btn btn-primary" href="#prenota">Prenota per questo disturbo</a></div>
+        <img src="img/zona-mandibola.webp" width="768" height="512" alt="" loading="lazy">
+      </div>
+      <div class="zone-panel" role="tabpanel" id="p-schiena" aria-labelledby="t-schiena" hidden>
         <div><h3>Schiena e zona lombare</h3><p>Lombalgia, sciatalgia, rigidità al risveglio o dopo molte ore seduti.</p><p class="who">Tipico di chi lavora alla scrivania, guida molto o solleva pesi.</p><a class="btn btn-primary" href="#prenota">Prenota per questo disturbo</a></div>
         <img src="img/zona-schiena.webp" width="513" height="342" alt="" loading="lazy">
       </div>
@@ -365,9 +369,6 @@ footer.site a{color:var(--muted)}
       <div class="zone-panel" role="tabpanel" id="p-piede" aria-labelledby="t-piede" hidden>
         <div><h3>Piede</h3><p>Fastidi alla pianta del piede, al tallone e appoggio alterato durante la camminata o la corsa.</p><p class="who">Runner e chi sta molte ore in piedi.</p><a class="btn btn-primary" href="#prenota">Prenota per questo disturbo</a></div>
         <img src="img/zona-piede.webp" width="513" height="342" alt="" loading="lazy">
-      </div>
-      <div class="zone-panel text-only" role="tabpanel" id="p-atm" aria-labelledby="t-atm" hidden>
-        <div><h3>Mandibola e bruxismo</h3><p>Denti serrati o digrignati, soprattutto di notte, click o dolore quando apri la bocca, tensioni a mandibola, tempie e collo, spesso legate tra loro.</p><p class="who">È l'ambito su cui ho concentrato la mia formazione: la mia tesi sul bruxismo ha vinto il premio come migliore del TCIO Milano 2026.</p><a class="btn btn-primary" href="#prenota">Prenota per questo disturbo</a></div>
       </div>
       <div class="zone-panel text-only" role="tabpanel" id="p-altro" aria-labelledby="t-altro" hidden>
         <div><h3>Non trovi la tua zona?</h3><p>Scrivimi su WhatsApp e raccontami il problema: ti dico se e come posso aiutarti.</p><p class="who">Rispondo di solito entro la giornata.</p><a class="btn btn-primary" href="https://wa.me/393522845762">Scrivimi su WhatsApp</a></div>
@@ -504,7 +505,7 @@ footer.site a{color:var(--muted)}
     });
   }
   tabs.forEach(function(t, i){
-    t.tabIndex = i === 0 ? 0 : -1;
+    t.tabIndex = t.getAttribute('aria-selected') === 'true' ? 0 : -1;
     t.addEventListener('click', function(){ select(t); });
     t.addEventListener('keydown', function(e){
       var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
