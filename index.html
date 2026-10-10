@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Elisa Riello, osteopata a Santo Stefano Ticino. Trattamenti per sportivi, mal di schiena, cervicale e tensioni. Riceve anche a Bareggio e Sedriano.">
+<meta name="description" content="Elisa Riello, osteopata a Santo Stefano Ticino. Trattamento osteopatico, trattamento specialistico dell'ATM e linfodrenaggio metodo Renata França. Riceve anche a Bareggio e Sedriano.">
 <meta property="og:title" content="Elisa Riello Osteopata">
 <meta property="og:description" content="Osteopata a Santo Stefano Ticino, Bareggio e Sedriano.">
 <meta property="og:image" content="https://osteopataelisariello.it/img/ritratto.webp">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://osteopataelisariello.it/">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalBusiness", "name": "Elisa Riello Osteopata", "url": "https://osteopataelisariello.it", "email": "info@osteopataelisariello.it", "telephone": "+39 352 284 5762", "image": "https://osteopataelisariello.it/img/ritratto.webp", "logo": "https://osteopataelisariello.it/img/logo.webp", "address": {"@type": "PostalAddress", "streetAddress": "[Via e numero civico]", "addressLocality": "Santo Stefano Ticino", "postalCode": "20010", "addressRegion": "MI", "addressCountry": "IT"}, "areaServed": ["Santo Stefano Ticino", "Bareggio", "Sedriano", "Vittuone", "Magenta"], "sameAs": ["https://www.instagram.com/elisarielloosteopata/"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalBusiness", "name": "Elisa Riello Osteopata", "url": "https://osteopataelisariello.it", "email": "info@osteopataelisariello.it", "telephone": "+39 352 284 5762", "image": "https://osteopataelisariello.it/img/ritratto.webp", "logo": "https://osteopataelisariello.it/img/logo.webp", "address": {"@type": "PostalAddress", "streetAddress": "Piazza Aldo Moro 5", "addressLocality": "Santo Stefano Ticino", "postalCode": "20010", "addressRegion": "MI", "addressCountry": "IT"}, "areaServed": ["Santo Stefano Ticino", "Bareggio", "Sedriano", "Vittuone", "Magenta"], "sameAs": ["https://www.instagram.com/elisarielloosteopata/"]}</script>
 <title>Elisa Riello, Osteopata a Santo Stefano Ticino</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -109,6 +109,13 @@ nav.main a.lnk:hover{color:var(--accent)}
 @media (max-width:760px){.zone-panel{grid-template-columns:1fr;padding:24px}.zone-panel img{order:-1}}
 
 /* per chi */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px}
+.svc{background:var(--surface);border-radius:var(--r-md);padding:30px;display:flex;flex-direction:column;gap:12px}
+.svc h3{font-size:22px}
+.svc p{color:var(--muted);font-size:16px}
+.svc.feature{background:var(--accent);color:var(--accent-ink)}
+.svc.feature p{color:var(--accent-ink);opacity:.88}
+.svc.feature .icon-dot{background:color-mix(in srgb,var(--accent-ink) 16%,transparent);color:var(--accent-ink)}
 .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px}
 .card{background:var(--bg);border-radius:var(--r-md);padding:30px;display:flex;flex-direction:column;gap:12px}
 .card p{color:var(--muted);font-size:16px}
@@ -223,7 +230,7 @@ footer.site a{color:var(--muted)}
       <span><b>Elisa Riello</b><small>Osteopata</small></span>
     </a>
     <nav class="main" aria-label="Menu principale">
-      <a class="lnk" href="#trattamenti">Trattamenti</a>
+      <a class="lnk" href="#prestazioni">Prestazioni</a>
       <a class="lnk" href="#chi-sono">Chi sono</a>
       <a class="lnk" href="#come-lavoro">Come lavoro</a>
       <a class="lnk" href="#sedi">Sedi</a>
@@ -237,7 +244,7 @@ footer.site a{color:var(--muted)}
   <section class="wrap hero">
     <div>
       <h1>Muoversi meglio, <em>ogni giorno.</em></h1>
-      <p class="lead">Osteopata a Santo Stefano Ticino. Mi prendo cura di sportivi e di chiunque conviva con mal di schiena, cervicale o tensioni, con un percorso costruito su di te.</p>
+      <p class="lead">Osteopata a Santo Stefano Ticino. Mi prendo cura di sportivi e di chiunque conviva con mal di schiena, cervicale, tensioni o disturbi della mandibola, con un percorso costruito su di te.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#prenota">Prenota una visita</a>
         <a class="btn btn-ghost" href="https://wa.me/393522845762">
@@ -259,9 +266,31 @@ footer.site a{color:var(--muted)}
     </div>
   </section>
 
+  <section id="prestazioni" class="wrap section" style="padding-top:24px">
+    <p class="eyebrow">Prestazioni</p>
+    <h2 class="h2" style="margin:8px 0 32px;max-width:640px">Cosa posso fare per te</h2>
+    <div class="svc-grid">
+      <article class="svc feature">
+        <span class="icon-dot"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M8 6h8M7 10h10M8 14h8M9 18h6"/></svg></span>
+        <h3>Trattamento osteopatico</h3>
+        <p>Valutazione e trattamento della persona nella sua globalità, con un approccio personalizzato e mirato alle esigenze di ognuno.</p>
+      </article>
+      <article class="svc">
+        <span class="icon-dot"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9c0-4 3-6 7-6s7 2 7 6c0 3-1 5-3 7l-1 4H9l-1-4c-2-2-3-4-3-7z"/><path d="M9 14c1.5 1 4.5 1 6 0"/></svg></span>
+        <h3>Trattamento specialistico dell'ATM</h3>
+        <p>Approccio specialistico all'articolazione temporo-mandibolare e ai disturbi collegati dell'area mandibolare, cervicale e cranio-facciale.</p>
+      </article>
+      <article class="svc">
+        <span class="icon-dot"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3 4 5 6.5 5 9.5a5 5 0 0 1-10 0C7 9.5 9 7 12 3z"/><path d="M10 13.5a2 2 0 0 0 2 2"/></svg></span>
+        <h3>Linfodrenaggio metodo Renata França</h3>
+        <p>Massaggio linfodrenante con il metodo Renata França, per favorire il drenaggio dei liquidi e la sensazione di leggerezza.</p>
+      </article>
+    </div>
+  </section>
+
   <section id="trattamenti" class="band band-round">
     <div class="wrap section center">
-      <p class="eyebrow">Trattamenti</p>
+      <p class="eyebrow">Disturbi</p>
       <h2 class="h2" style="margin:8px 0 12px">Dove senti fastidio?</h2>
       <p class="lead">Scegli la zona e scopri come posso aiutarti.</p>
 
@@ -272,6 +301,7 @@ footer.site a{color:var(--muted)}
         <button class="zone-btn" role="tab" id="t-ginocchio" aria-controls="p-ginocchio" aria-selected="false">Ginocchio</button>
         <button class="zone-btn" role="tab" id="t-caviglia" aria-controls="p-caviglia" aria-selected="false">Caviglia</button>
         <button class="zone-btn" role="tab" id="t-piede" aria-controls="p-piede" aria-selected="false">Piede</button>
+        <button class="zone-btn" role="tab" id="t-atm" aria-controls="p-atm" aria-selected="false">Mandibola (ATM)</button>
         <button class="zone-btn" role="tab" id="t-altro" aria-controls="p-altro" aria-selected="false">Altro</button>
       </div>
 
@@ -299,30 +329,14 @@ footer.site a{color:var(--muted)}
         <div><h3>Piede</h3><p>Fastidi alla pianta del piede, al tallone e appoggio alterato durante la camminata o la corsa.</p><p class="who">Runner e chi sta molte ore in piedi.</p><a class="btn btn-primary" href="#prenota">Prenota per questo disturbo</a></div>
         <img src="img/zona-piede.webp" width="513" height="342" alt="" loading="lazy">
       </div>
+      <div class="zone-panel text-only" role="tabpanel" id="p-atm" aria-labelledby="t-atm" hidden>
+        <div><h3>Mandibola e ATM</h3><p>Click o dolore quando apri la bocca, serramento dei denti, tensioni a mandibola, tempie e collo, spesso legate tra loro.</p><p class="who">È uno degli ambiti su cui ho un approccio specialistico.</p><a class="btn btn-primary" href="#prenota">Prenota per questo disturbo</a></div>
+      </div>
       <div class="zone-panel text-only" role="tabpanel" id="p-altro" aria-labelledby="t-altro" hidden>
         <div><h3>Non trovi la tua zona?</h3><p>Scrivimi su WhatsApp e raccontami il problema: ti dico se e come posso aiutarti.</p><p class="who">Rispondo di solito entro la giornata.</p><a class="btn btn-primary" href="https://wa.me/393522845762">Scrivimi su WhatsApp</a></div>
       </div>
     </div>
 
-    <div class="wrap" style="padding-bottom:88px">
-      <div class="grid3">
-        <div class="card feature">
-          <span class="icon-dot"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="14" cy="4" r="2"/><path d="M6 20l3-6 3 2 2-5 4 3"/><path d="M9 14l-3-2 4-4 4 1"/></svg></span>
-          <h3>Per chi fa sport</h3>
-          <p>Prevenzione, recupero dopo un infortunio e supporto nei periodi di carico. Collaboro con le società sportive della zona.</p>
-        </div>
-        <div class="card">
-          <span class="icon-dot"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span>
-          <h3>Per chi lavora seduto</h3>
-          <p>Tensioni da postura, ore al computer, stress che si accumula su collo e schiena.</p>
-        </div>
-        <div class="card">
-          <span class="icon-dot"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></span>
-          <h3>Per ogni età</h3>
-          <p>[Gravidanza, post parto, adulti e anziani: Elisa conferma cosa tratta.]</p>
-        </div>
-      </div>
-    </div>
   </section>
 
   <section id="chi-sono" class="wrap section about">
@@ -375,7 +389,7 @@ footer.site a{color:var(--muted)}
         <div class="main-site">
           <span class="pill">Sede principale</span>
           <h3>Santo Stefano Ticino</h3>
-          <p>[Nome studio], [Via e numero civico]</p>
+          <p>Cryovis, Piazza Aldo Moro 5<br>20010 Santo Stefano Ticino (MI)</p>
           <dl class="hours">
             <dt>Lunedì</dt><dd>[9:00-13:00]</dd>
             <dt>Mercoledì</dt><dd>[14:00-20:00]</dd>
@@ -387,7 +401,7 @@ footer.site a{color:var(--muted)}
           <div><h3>Sedriano</h3><p>[Studio] · [giorno]</p></div>
         </div>
       </div>
-      <a class="map" href="https://www.google.com/maps/search/?api=1&query=Santo+Stefano+Ticino">
+      <a class="map" href="https://www.google.com/maps/search/?api=1&query=Cryovis+Piazza+Aldo+Moro+5+Santo+Stefano+Ticino">
         <img src="img/mappa.webp" width="960" height="720" alt="Mappa dello studio a Santo Stefano Ticino" loading="lazy">
         <span>Apri in Google Maps</span>
       </a>
