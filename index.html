@@ -44,6 +44,7 @@
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth}
+[id]{scroll-margin-top:96px}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6}
 img{max-width:100%;height:auto;display:block}
@@ -582,7 +583,17 @@ footer.site a{color:var(--muted)}
 })();
 </script>
 <!--/MAP-->
-
+<script>
+document.querySelectorAll('a[href="#prenota"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var t=document.querySelector('#prenota .book'); if(!t) return;
+    e.preventDefault();
+    var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    t.scrollIntoView({block:'center',behavior:reduce?'auto':'smooth'});
+    if(history.replaceState) history.replaceState(null,'','#prenota');
+  });
+});
+</script>
 
 </body>
 </html>
