@@ -15,7 +15,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://simoneriello.github.io/osteopatia-elisa-riello/">
 <link rel="preload" as="image" href="img/ritratto.webp">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalBusiness", "@id": "https://simoneriello.github.io/osteopatia-elisa-riello/#studio", "name": "Elisa Riello Osteopata", "description": "Osteopata a Sedriano. Trattamento osteopatico, approccio specialistico su ATM e bruxismo, linfodrenaggio metodo Renata França.", "url": "https://simoneriello.github.io/osteopatia-elisa-riello/", "telephone": "+39 352 284 5762", "priceRange": "50-60 €", "image": "https://simoneriello.github.io/osteopatia-elisa-riello/img/ritratto.webp", "logo": "https://simoneriello.github.io/osteopatia-elisa-riello/img/logo.webp", "address": {"@type": "PostalAddress", "streetAddress": "Via Campo Sportivo 12", "addressLocality": "Sedriano", "postalCode": "20018", "addressRegion": "MI", "addressCountry": "IT"}, "geo": {"@type": "GeoCoordinates", "latitude": 45.4864513, "longitude": 8.9733728}, "hasMap": "https://www.google.com/maps/search/?api=1&query=45.4864513,8.9733728", "knowsAbout": ["Osteopatia", "Bruxismo", "Articolazione temporo-mandibolare", "Osteopatia sportiva", "Linfodrenaggio metodo Renata França"], "areaServed": ["Sedriano", "Vittuone", "Arluno", "Bareggio", "Santo Stefano Ticino", "Magenta", "Corbetta"], "founder": {"@type": "Person", "name": "Elisa Riello", "jobTitle": "Osteopata", "alumniOf": "TCIO Istituto di Osteopatia di Milano"}, "sameAs": ["https://www.instagram.com/elisariello.osteopata/"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalBusiness", "@id": "https://simoneriello.github.io/osteopatia-elisa-riello/#studio", "name": "Elisa Riello Osteopata", "description": "Osteopata a Sedriano. Trattamento osteopatico, approccio specialistico su ATM e bruxismo, linfodrenaggio metodo Renata França.", "url": "https://simoneriello.github.io/osteopatia-elisa-riello/", "telephone": "+39 352 284 5762", "priceRange": "50-60 €", "image": "https://simoneriello.github.io/osteopatia-elisa-riello/img/ritratto.webp", "logo": "https://simoneriello.github.io/osteopatia-elisa-riello/img/logo-full.webp", "address": {"@type": "PostalAddress", "streetAddress": "Via Campo Sportivo 12", "addressLocality": "Sedriano", "postalCode": "20018", "addressRegion": "MI", "addressCountry": "IT"}, "geo": {"@type": "GeoCoordinates", "latitude": 45.4864513, "longitude": 8.9733728}, "hasMap": "https://www.google.com/maps/search/?api=1&query=45.4864513,8.9733728", "knowsAbout": ["Osteopatia", "Bruxismo", "Articolazione temporo-mandibolare", "Osteopatia sportiva", "Linfodrenaggio metodo Renata França"], "areaServed": ["Sedriano", "Vittuone", "Arluno", "Bareggio", "Santo Stefano Ticino", "Magenta", "Corbetta"], "founder": {"@type": "Person", "name": "Elisa Riello", "jobTitle": "Osteopata", "alumniOf": "TCIO Istituto di Osteopatia di Milano"}, "sameAs": ["https://www.instagram.com/elisariello.osteopata/"]}</script>
 <title>Elisa Riello, Osteopata a Sedriano · ATM e bruxismo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,8 +73,10 @@ p{margin:0}
 header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent}
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg)}
-.brand-logo{width:56px;height:56px;flex:none;border-radius:50%;box-shadow:0 2px 10px rgba(30,42,42,.10)}
-.foot-logo{width:96px;height:96px;border-radius:50%}
+.brand-logo{height:50px;width:auto;flex:none}
+.foot-logo{width:150px;height:auto}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .brand-logo,:root:not([data-theme="light"]) .foot-logo{background:#F7F4EE;border-radius:10px;padding:4px 6px}}
+:root[data-theme="dark"] .brand-logo,:root[data-theme="dark"] .foot-logo{background:#F7F4EE;border-radius:10px;padding:4px 6px}
 .foot-id{display:flex;align-items:center;gap:16px}
 .brand b{font-family:var(--display);font-size:19px;display:block;line-height:1.2}
 .brand small{color:var(--muted);font-size:14px}
@@ -197,7 +199,7 @@ figure.rev figcaption{font-weight:700;font-size:15px}
 .map-cta{position:absolute;right:16px;bottom:16px;z-index:500;display:inline-flex;align-items:center;gap:8px;min-height:44px;background:var(--surface);color:var(--fg);border-radius:999px;padding:10px 18px;font-weight:700;font-size:15px;text-decoration:none;box-shadow:var(--shadow)}
 .map-cta:hover{color:var(--accent)}
 .pin{width:52px;height:52px;border-radius:50% 50% 50% 0;background:var(--accent);transform:rotate(-45deg);display:grid;place-items:center;box-shadow:0 8px 20px rgba(30,42,42,.30)}
-.pin img{width:42px;height:42px;border-radius:50%;transform:rotate(45deg)}
+.pin img{width:42px;height:42px;border-radius:50%;transform:rotate(45deg);background:#F7F4EE;object-fit:contain;padding:5px}
 .leaflet-container{font-family:var(--body);background:var(--sage)}
 .leaflet-control-attribution{font-size:11px}
 .map .leaflet-tile-pane{filter:grayscale(.9) sepia(.12) brightness(1.04) contrast(.92)}
@@ -257,7 +259,7 @@ footer.site a{color:var(--muted)}
 <header class="site">
   <div class="wrap">
     <a class="brand" href="#top">
-      <img class="brand-logo" src="img/logo.webp" width="56" height="56" alt="">
+      <img class="brand-logo" src="img/logo-mono.webp" width="278" height="300" alt="">
       <span><b>Elisa Riello</b><small>Osteopata</small></span>
     </a>
     <nav class="main" aria-label="Menu principale">
@@ -308,7 +310,7 @@ footer.site a{color:var(--muted)}
           <span class="svc-rule"></span>
           <p>Valutazione e trattamento della persona nella sua globalità, con un approccio personalizzato e mirato alle esigenze di ognuno.</p>
         </div>
-        <img class="svc-ph" src="img/svc-osteopatia.webp" width="640" height="960" alt="Elisa Riello durante un trattamento osteopatico alla schiena" style="object-position:55% 30%" loading="lazy">
+        <img class="svc-ph" src="img/svc-osteopatia.webp" width="314" height="490" alt="Trattamento osteopatico alla schiena" loading="lazy">
       </article>
       <article class="svc">
         <div class="svc-txt">
@@ -397,7 +399,7 @@ footer.site a{color:var(--muted)}
 
   <section id="come-lavoro" class="band band-round">
     <div class="wrap section work">
-      <img src="img/trattamento.webp" width="960" height="1280" alt="Elisa Riello durante un trattamento osteopatico a collo e spalle" loading="lazy">
+      <img src="img/trattamento.webp" width="960" height="1280" alt="Elisa Riello durante un trattamento osteopatico alla schiena" loading="lazy">
       <div>
         <p class="eyebrow">Come lavoro</p>
         <h2 class="h2" style="margin-top:8px">La prima visita, senza sorprese</h2>
@@ -445,7 +447,7 @@ footer.site a{color:var(--muted)}
       </div>
       <div class="map-wrap">
         <div class="map-fallback">
-          <div class="pin"><img src="img/logo.webp" width="42" height="42" alt=""></div>
+          <div class="pin"><img src="img/logo-mono.webp" width="42" height="42" alt=""></div>
           <strong>Via Campo Sportivo 12, Sedriano</strong>
           <p>La mappa interattiva compare sul sito pubblicato.</p>
         </div>
@@ -484,7 +486,7 @@ footer.site a{color:var(--muted)}
 
 <footer class="site">
   <div class="wrap">
-    <span class="foot-id"><img class="foot-logo" src="img/logo.webp" width="96" height="96" alt="Logo Elisa Riello Osteopata" loading="lazy"><span>Elisa Riello · Osteopata<br>P.IVA [NUMERO]</span></span>
+    <span class="foot-id"><img class="foot-logo" src="img/logo-full.webp" width="900" height="698" alt="Logo Elisa Riello Osteopata" loading="lazy"><span>P.IVA [NUMERO]</span></span>
     <nav aria-label="Link utili">
       <a href="#">Privacy</a>
       <a href="https://www.instagram.com/elisariello.osteopata/">Instagram</a>
@@ -535,7 +537,7 @@ footer.site a{color:var(--muted)}
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
-  var icon = L.divIcon({ className: 'pin-icon', html: '<div class="pin"><img src="img/logo.webp" width="42" height="42" alt=""></div>', iconSize: [52, 52], iconAnchor: [26, 63] });
+  var icon = L.divIcon({ className: 'pin-icon', html: '<div class="pin"><img src="img/logo-mono.webp" width="42" height="42" alt=""></div>', iconSize: [52, 52], iconAnchor: [26, 63] });
   L.marker(pos, { icon: icon, title: 'Elisa Riello Osteopata, Via Campo Sportivo 12, Sedriano', keyboard: false }).addTo(map);
   map.panBy([0, -40], { animate: false });
   document.querySelector('.map-fallback').hidden = true;
