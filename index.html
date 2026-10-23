@@ -581,15 +581,16 @@ footer.site a{color:var(--muted)}
 </script>
 <!--/MAP-->
 <script>
-document.querySelectorAll('a[href="#prenota"]').forEach(function(a){
-  a.addEventListener('click',function(e){
-    var t=document.querySelector('#prenota .book'); if(!t) return;
-    e.preventDefault();
-    var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    t.scrollIntoView({block:'center',behavior:reduce?'auto':'smooth'});
-    if(history.replaceState) history.replaceState(null,'','#prenota');
-  });
-});
+/* Il sito si apre sempre dall'inizio: niente ripristino della posizione e niente ancore nell'indirizzo */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+(function(){
+  function top(){
+    if (location.hash && history.replaceState) history.replaceState(null, '', location.pathname + location.search);
+    window.scrollTo(0, 0);
+  }
+  top();
+  window.addEventListener('pageshow', function(e){ if (e.persisted) top(); });
+})();
 </script>
 
 </body>
