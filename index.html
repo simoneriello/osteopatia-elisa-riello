@@ -475,7 +475,7 @@ footer.site a{color:var(--muted)}
         <div class="map-fallback">
           <div class="pin"><img src="img/logo-mono.webp" width="42" height="42" alt=""></div>
           <strong>Via Campo Sportivo 12, Sedriano</strong>
-          <p>La mappa interattiva compare sul sito pubblicato.</p>
+          <p>Tocca "Indicazioni stradali" per aprire il percorso sul telefono.</p>
         </div>
         <div id="map" class="map" role="region" aria-label="Mappa dello studio di Elisa Riello a Sedriano, Via Campo Sportivo 12"></div>
         <a class="map-cta" href="https://www.google.com/maps/dir/?api=1&destination=45.4864513,8.9733728">
@@ -552,21 +552,31 @@ footer.site a{color:var(--muted)}
 </script>
 <!--MAP-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-gesture-handling@1.2.2/dist/leaflet-gesture-handling.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-gesture-handling@1.2.2/dist/leaflet-gesture-handling.min.js"></script>
 <script>
 (function(){
-  if (!window.L) return;
-  var pos = [45.4864513, 8.9733728];
   var el = document.getElementById('map');
-  var map = L.map(el, { center: pos, zoom: 15, scrollWheelZoom: false, dragging: !L.Browser.mobile, tap: false, zoomControl: true });
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  var fb = document.querySelector('.map-fallback');
+  if (!window.L || !el) return;
+  var pos = [45.4864513, 8.9733728];
+  var opts = { center: pos, zoom: 15, zoomControl: true };
+  if (L.GestureHandling) { opts.gestureHandling = true; } else { opts.scrollWheelZoom = false; }
+  el.style.visibility = 'hidden';
+  var map = L.map(el, opts);
+  var errors = 0, shown = false;
+  var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-  }).addTo(map);
+  });
+  tiles.on('tileload', function(){ if (!shown) { shown = true; el.style.visibility = 'visible'; fb.hidden = true; } });
+  tiles.on('tileerror', function(){ errors++; if (!shown && errors > 3) { map.remove(); el.remove(); } });
+  tiles.addTo(map);
   var icon = L.divIcon({ className: 'pin-icon', html: '<div class="pin"><img src="img/logo-mono.webp" width="42" height="42" alt=""></div>', iconSize: [52, 52], iconAnchor: [26, 63] });
   L.marker(pos, { icon: icon, title: 'Elisa Riello Osteopata, Via Campo Sportivo 12, Sedriano', keyboard: false }).addTo(map);
   map.panBy([0, -40], { animate: false });
-  document.querySelector('.map-fallback').hidden = true;
+  window.addEventListener('resize', function(){ map.invalidateSize(); });
 })();
 </script>
 <!--/MAP-->
