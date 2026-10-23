@@ -562,7 +562,7 @@ footer.site a{color:var(--muted)}
   if (!window.L || !el) return;
   var pos = [45.4864513, 8.9733728];
   var opts = { center: pos, zoom: 15, zoomControl: true };
-  if (L.GestureHandling) { opts.gestureHandling = true; } else { opts.scrollWheelZoom = false; }
+  if (window.leafletGestureHandling) { opts.gestureHandling = true; } else { opts.scrollWheelZoom = false; opts.dragging = !L.Browser.mobile; }
   el.style.visibility = 'hidden';
   var map = L.map(el, opts);
   var errors = 0, shown = false;
